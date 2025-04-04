@@ -2,23 +2,27 @@
 console.log('Home page JS loaded');
 
 
+// Update your observer to handle both types
+const observers = [];
 
-const section3 = document.getElementById('section3');
-const observer = new IntersectionObserver((entries) => {
+// Hero section observer
+const heroObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('unmasked');
-      
-      // Remove curtains after animation
-      setTimeout(() => {
-        const curtains = entry.target.querySelectorAll('.unmask-curtain');
-        curtains.forEach(curtain => curtain.style.display = 'none');
-      }, 1500);
     }
   });
-}, { 
-  threshold: 0.25,
-  rootMargin: '0px 0px -100px 0px'
-});
+}, {threshold: 0.1});
+heroObserver.observe(document.getElementById('hero'));
 
-observer.observe(section3);
+// Horizontal sections observer (existing)
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+    }
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.split-section').forEach(section => {
+  sectionObserver.observe(section);
+});
