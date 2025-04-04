@@ -1,19 +1,25 @@
 // Home page scripts 1
 console.log('Home page JS loaded');
 
-// Update your observer config to:
+
+
+// Dodajte u postojeći IntersectionObserver
+const section3 = document.getElementById('section3');
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('unmasked');
-        // Special delay for hero text
-        if(entry.target.id === 'hero-section') {
-          setTimeout(() => {
-            entry.target.querySelectorAll('.hero-text').forEach(text => {
-              text.style.opacity = 1;
-            });
-          }, 800); // Matches CSS transition
-        }
-      }
-    });
-  }, {threshold: 0.2});
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('unmasked');
+    }
+  });
+}, {threshold: 0.1});
+
+observer.observe(section3);
+
+#section3.unmasked .top-cover {
+  transform: scaleY(0);
+  transition-delay: 0.3s; /* Mali delay za dramatičnost */
+}
+
+#section3.unmasked .bottom-cover {
+  transform: scaleY(0);
+}
