@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page - Curtains Animation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        .section {
+            display: flex;
+            height: 100vh;
+            transition: transform 1s ease-out;
+        }
+        .left, .right {
+            flex: 1;
+            height: 100%;
+            position: relative;
+            overflow: hidden; /* Ensure no overflow */
+        }
+        .left {
+            background-color: black;
+        }
+        .right {
+            background-color: white;
+        }
+        .poklopac {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            background-color: black;
+            z-index: 1; /* Ensure it is above the content */
+        }
+        .right .poklopac {
+            background-color: black; /* Right side is also black */
+            z-index: 1;
+        }
+
+        /* Animation for opening both halves */
+        .open .left .poklopac {
+            animation: moveLeft 1s forwards;
+        }
+        .open .right .poklopac {
+            animation: moveRight 1s forwards;
+        }
+        @keyframes moveLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        @keyframes moveRight {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Home Section 1 -->
+        <div class="section" id="home-section1">
+            <div class="left">
+                <div class="poklopac"></div>
+            </div>
+            <div class="right">
+                <div class="poklopac"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Trigger animation for opening
+        document.querySelector('#home-section1').classList.add('open');
+    </script>
+
+</body>
+</html>
