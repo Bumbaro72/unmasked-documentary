@@ -1,92 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page - Curtains Animation</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-        }
-        .section {
-            display: flex;
-            height: 100vh;
-            transition: transform 1s ease-out;
-        }
-        .left, .right {
-            flex: 1;
-            height: 100%;
-            position: relative;
-            overflow: hidden; /* Ensure no overflow */
-        }
-        .left {
-            background-color: black;
-        }
-        .right {
-            background-color: white;
-        }
-        .poklopac {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 50%;
-            background-color: black;
-            z-index: 1; /* Ensure it is above the content */
-        }
-        .right .poklopac {
-            background-color: black; /* Right side is also black */
-            z-index: 1;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unmasked Documentary</title>
+  <style>
+    /* Osnovni stil */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Animation for opening both halves */
-        .open .left .poklopac {
-            animation: moveLeft 1s forwards;
-        }
-        .open .right .poklopac {
-            animation: moveRight 1s forwards;
-        }
-        @keyframes moveLeft {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-        @keyframes moveRight {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(100%);
-            }
-        }
-    </style>
+    body {
+      font-family: sans-serif;
+      background-color: white;
+    }
+
+    nav, footer {
+      padding: 1rem;
+      background: #000;
+      color: white;
+      text-align: center;
+    }
+
+    section {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .lijeva-polovica, .desna-polovica {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      padding: 2rem;
+    }
+
+    .lijeva-polovica {
+      background-color: black;
+      color: white;
+    }
+
+    .desna-polovica {
+      background-color: white;
+      color: black;
+    }
+
+    /* Curtain efekt */
+    .curtain-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .left-curtain, .right-curtain {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background-color: black;
+      z-index: 10;
+      transition: transform 1.2s ease-in-out;
+    }
+
+    .left-curtain {
+      left: 0;
+      transform: translateX(0%);
+    }
+
+    .right-curtain {
+      right: 0;
+      transform: translateX(0%);
+    }
+
+    .curtains-open .left-curtain {
+      transform: translateX(-100%);
+    }
+
+    .curtains-open .right-curtain {
+      transform: translateX(100%);
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Home Section 1 -->
-        <div class="section" id="home-section1">
-            <div class="left">
-                <div class="poklopac"></div>
-            </div>
-            <div class="right">
-                <div class="poklopac"></div>
-            </div>
-        </div>
+  <nav>Navigation</nav>
+
+  <!-- Cjelina 1 s animacijom -->
+  <div class="curtain-wrapper">
+    <div class="left-curtain"></div>
+    <div class="right-curtain"></div>
+    <section class="cjelina cjelina-1">
+      <div class="lijeva-polovica">
+        <p>Welcome / Bienvenue</p>
+      </div>
+      <div class="desna-polovica">
+        <p>This is the first section / Ceci est la première section</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Cjelina 2 -->
+  <section class="cjelina cjelina-2">
+    <div class="desna-polovica">
+      <p>Second section / Deuxième section</p>
     </div>
+    <div class="lijeva-polovica">
+      <p>Left content / Contenu gauche</p>
+    </div>
+  </section>
 
-    <script>
-        // Trigger animation for opening
-        document.querySelector('#home-section1').classList.add('open');
-    </script>
+  <!-- Cjelina 3 -->
+  <section class="cjelina cjelina-3">
+    <div class="lijeva-polovica">
+      <p>Third section / Troisième section</p>
+    </div>
+    <div class="desna-polovica">
+      <p>Right content / Contenu droite</p>
+    </div>
+  </section>
 
+  <!-- Cjelina 4 -->
+  <section class="cjelina cjelina-4">
+    <div class="desna-polovica">
+      <p>Fourth section / Quatrième section</p>
+    </div>
+    <div class="lijeva-polovica">
+      <p>Left again / Encore gauche</p>
+    </div>
+  </section>
+
+  <footer>Footer</footer>
+
+  <script>
+    window.addEventListener('load', () => {
+      const wrapper = document.querySelector('.curtain-wrapper');
+      wrapper.classList.add('curtains-open');
+    });
+  </script>
 </body>
 </html>
