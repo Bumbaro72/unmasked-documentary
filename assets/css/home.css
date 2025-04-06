@@ -1,5 +1,37 @@
 /* Home-specific adjustments */
+/* Hero sekcija */
+.hero {
+  position: relative;
+  width: 100%;
+}
 
+.hero__curtain {
+  position: absolute;
+  background: #000;
+  z-index: 10;
+}
+
+/* Vertikalne sekcije */
+.vertical-split {
+  display: flex;
+  min-height: 100vh;
+}
+
+.vertical-split__half {
+  width: 50%;
+}
+
+/* Horizontalna sekcija */
+.horizontal-split {
+  position: relative;
+}
+
+.horizontal-split__curtain {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: #000;
+}
 /* Nav height offset */  
 main
 
