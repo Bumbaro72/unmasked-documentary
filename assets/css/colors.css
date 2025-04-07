@@ -150,3 +150,37 @@
 #gallery-whole-1, #gallery-whole-3 {
   background-color: black;
 }
+
+#home-whole-3.vertical {
+  position: relative; /* nužno za pozicioniranje poklopaca */
+  overflow: hidden;   /* sprječava da curtaini 'bježe' van */
+}
+
+#home-whole-3.vertical .curtain {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: black; /* ili koju već koristiš za curtain */
+  transition: transform 1s ease-in-out;
+}
+
+#home-whole-3.vertical .curtain[data-side="top"] {
+  top: 0;
+  height: 50%;
+  transform: translateY(0%);
+}
+
+#home-whole-3.vertical .curtain[data-side="bottom"] {
+  bottom: 0;
+  height: 50%;
+  transform: translateY(0%);
+}
+
+#home-whole-3.vertical.open .curtain[data-side="top"] {
+  transform: translateY(-100%);
+}
+
+#home-whole-3.vertical.open .curtain[data-side="bottom"] {
+  transform: translateY(100%);
+}
