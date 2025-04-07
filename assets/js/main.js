@@ -28,4 +28,19 @@ console.log('Production page loaded');
             });
         });
     }
+
+    // Fade-in na scroll za <p> (samo)
+document.addEventListener('DOMContentLoaded', () => {
+    const paragraphs = document.querySelectorAll('p');
     
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '0.15'; // Vrati na inicijalnu vrijednost
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    paragraphs.forEach(p => observer.observe(p));
+  });
+

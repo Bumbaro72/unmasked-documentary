@@ -150,3 +150,43 @@ input, textarea, button {
 .chess-tile img:hover {
   transform: scale(1.05);
 }
+
+/* Fade-in za paragrafe - inicijalno 15% opacity, hover 100% */
+p {
+  opacity: 0.15;
+  transition: opacity 0.5s ease-out;
+}
+
+p:hover {
+  opacity: 1 !important; /* Forsiraj punu vidljivost na hover */
+}
+
+/* Opcionalno: spori hover-off efekt za dramatičniji "unmasking" osjećaj */
+p {
+  transition: opacity 0.3s ease-out, opacity 0.1s ease-in 0.2s; 
+}
+
+/* Underline animacija za sve naslove (h1, h2, h3...) */
+h1, h2, h3, h4, h5, h6, .top-nav a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none !important; /* Ukloni defaultni underline */
+}
+
+h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, .top-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Podešavanje udaljenosti od teksta */
+  width: 0;
+  height: 2px; /* Debljina underlinea */
+  background-color: currentColor; /* Boja underlinea = boja teksta */
+  transition: width 0.4s ease-out;
+}
+
+h1:hover::after, h2:hover::after, h3:hover::after, 
+h4:hover::after, h5:hover::after, h6:hover::after, 
+.top-nav a:hover::after {
+  width: 100%; /* Puni underline na hover */
+}
+
