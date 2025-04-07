@@ -95,3 +95,58 @@ input, textarea, button {
   color: white;
   text-shadow: 1px 1px 3px black;
 }
+
+#gallery-whole-2 {
+  display: block; /* poništi flex iz .whole */
+}
+
+.chessboard {
+  width: 100vw; /* osiguraj punu širinu */
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* GALLERY-SPECIFIC STYLES */
+.full-width {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Video containers */
+.video-container {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Chessboard gallery */
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100vh;
+}
+
+.chess-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.chess-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.chess-tile img:hover {
+  transform: scale(1.05);
+}
