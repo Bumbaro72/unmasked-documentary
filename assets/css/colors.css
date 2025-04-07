@@ -111,3 +111,29 @@
     background-color: black;
     color: white;
 }
+
+/* Overview Page Colors */
+#overview-whole-1 .half.left {
+  background-color: white;
+  color: black;
+}
+
+#overview-whole-1 .half.right {
+  background-color: black;
+  color: white;
+}
+
+/* Scrollable Content */
+.content-wrapper {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 20px; /* For scrollbar space */
+}
+
+/* Custom Scrollbar (optional) */
+.half::-webkit-scrollbar {
+  width: 8px;
+}
+.half::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+}
