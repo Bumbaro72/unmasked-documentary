@@ -137,3 +137,8 @@
 .half::-webkit-scrollbar-thumb {
   background: rgba(0,0,0,0.2);
 }
+
+/* Gallery Page Colors */
+#gallery-whole-1, #gallery-whole-3 {
+  background-color: black;
+}

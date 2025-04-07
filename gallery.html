@@ -3,35 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNMASKED | DÉMASQUÉ</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/colors.css">
-    <script src="./assets/js/main.js"></script>
+    <title>UNMASKED | GALLERY</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
+    <style>
+        /* GALLERY-SPECIFIC STYLES */
+        .full-width {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Video containers */
+        .video-container {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Chessboard gallery */
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            height: 100vh;
+        }
+        
+        .chess-tile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .chess-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .chess-tile img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-   <!-- NAVIGATION -->
-   <nav>
-    <div class="nav-left">
-        <a href="index.html">UNMASKED</a>
-        <a href="overview.html">OVERVIEW</a>
-        <a href="production.html">PRODUCTION</a>
-        <a href="gallery.html">GALLERY</a>
-        <a href="contact.html">CONTACT</a>
-    </div>
-    <div class="nav-right">
-        <a href="index.html">DÉMASQUÉ</a>
-        <a href="overview.html">APERÇU</a>
-        <a href="production.html">PRODUCTION</a>
-        <a href="gallery.html">GALERIE</a>
-        <a href="contact.html">CONTACT</a>
-    </div>
-</nav>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-left">
+            <a href="index.html">UNMASKED</a>
+            <a href="overview.html">OVERVIEW</a>
+            <a href="production.html">PRODUCTION</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+        <div class="nav-right">
+            <a href="index.html">DÉMASQUÉ</a>
+            <a href="overview.html">APERÇU</a>
+            <a href="production.html">PRODUCTION</a>
+            <a href="gallery.html">GALERIE</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </nav>
 
-  <main>
-    
-  </main>
-  <footer>
+    <!-- GALLERY CONTENT -->
+    <main>
+        <!-- Whole 1 - Full width video -->
+        <section class="whole" id="gallery-whole-1">
+            <div class="curtain" data-side="left"></div>
+            <div class="curtain" data-side="right"></div>
+            <div class="full-width">
+                <div class="video-container">
+                    <video controls width="80%">
+                        <source src="assets/videos/trailer.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Whole 2 - Chessboard photo gallery -->
+        <section class="whole" id="gallery-whole-2">
+            <div class="curtain" data-side="left"></div>
+            <div class="curtain" data-side="right"></div>
+            <div class="chessboard">
+                <!-- Row 1 -->
+                <div class="chess-tile" style="background: black;">
+                    <img src="assets/images/photo1.jpg" alt="Photo 1">
+                </div>
+                <div class="chess-tile" style="background: white;">
+                    <img src="assets/images/photo2.jpg" alt="Photo 2">
+                </div>
+                <div class="chess-tile" style="background: black;">
+                    <img src="assets/images/photo3.jpg" alt="Photo 3">
+                </div>
+                <div class="chess-tile" style="background: white;">
+                    <img src="assets/images/photo4.jpg" alt="Photo 4">
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="chess-tile" style="background: white;">
+                    <img src="assets/images/photo5.jpg" alt="Photo 5">
+                </div>
+                <div class="chess-tile" style="background: black;">
+                    <img src="assets/images/photo6.jpg" alt="Photo 6">
+                </div>
+                <div class="chess-tile" style="background: white;">
+                    <img src="assets/images/photo7.jpg" alt="Photo 7">
+                </div>
+                <div class="chess-tile" style="background: black;">
+                    <img src="assets/images/photo8.jpg" alt="Photo 8">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Whole 3 - Full width video -->
+        <section class="whole" id="gallery-whole-3">
+            <div class="curtain" data-side="left"></div>
+            <div class="curtain" data-side="right"></div>
+            <div class="full-width">
+                <div class="video-container">
+                    <video controls width="80%">
+                        <source src="assets/videos/behind-scenes.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
         <p>© 2023 UNMASKED DOCUMENTARY | ALL RIGHTS RESERVED</p>
     </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
