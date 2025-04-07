@@ -86,6 +86,10 @@
 }
 
  /* PRODUCTION-SPECIFIC COLORS */
+ #home-whole-1 .half.left,
+ #home-whole-3 .half.left,
+ #home-whole-2 .half.right,
+ #home-whole-4 .half.right,
  #production-whole-1 .half.left,
  #production-whole-3 .half.left,
  #production-whole-2 .half.right,
@@ -94,6 +98,10 @@
      color: white;
  }
  
+ #home-whole-1 .half.right,
+ #home-whole-3 .half.right,
+ #home-whole-2 .half.left,
+ #home-whole-4 .half.left,
  #production-whole-1 .half.right,
  #production-whole-3 .half.right,
  #production-whole-2 .half.left,
