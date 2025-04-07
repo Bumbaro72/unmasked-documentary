@@ -163,7 +163,7 @@ p:hover {
 
 /* Opcionalno: spori hover-off efekt za dramatičniji "unmasking" osjećaj */
 p {
-  transition: opacity 0.1s ease-out, opacity 0.5s ease-in 0.2s; 
+  transition: opacity 0.1s cubic-bezier(0,0,.17,.95), opacity 0.5s cubic-bezier(0,.7,1,1) 0.2s; 
 }
 
 /* Underline animacija za sve naslove (h1, h2, h3...) */
@@ -190,14 +190,3 @@ h4:hover::after, h5:hover::after, h6:hover::after,
   width: 100%; /* Puni underline na hover */
 }
 
-/* VERTIKALNI RASPORED ZA HOME WHOLE 3 */
-
-#home-whole-3 {
-  display: flex;
-  flex-direction: column;
-}
-
-#home-whole-3 .half {
-  width: 100%;
-  height: 50%; /* dvije polovice unutar cijele visine */
-}
