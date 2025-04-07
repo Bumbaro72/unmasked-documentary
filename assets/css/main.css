@@ -163,7 +163,7 @@ p:hover {
 
 /* Opcionalno: spori hover-off efekt za dramatičniji "unmasking" osjećaj */
 p {
-  transition: opacity 0.3s ease-out, opacity 0.1s ease-in 0.2s; 
+  transition: opacity 0.1s ease-out, opacity 0.5s ease-in 0.2s; 
 }
 
 /* Underline animacija za sve naslove (h1, h2, h3...) */
