@@ -1,3 +1,5 @@
+ /* MAIN.CSS - GLOBAL STYLES */
+
 * {
   margin: 0;
   padding: 0;
@@ -63,23 +65,6 @@ nav a {
   justify-content: center;
 }
 
-/* Color alternation */
-#whole-1 .left-half,
-#whole-3 .left-half,
-#whole-2 .right-half,
-#whole-4 .right-half {
-  background-color: #000;
-  color: white;
-}
-
-#whole-1 .right-half,
-#whole-3 .right-half,
-#whole-2 .left-half,
-#whole-4 .left-half {
-  background-color: white;
-  color: black;
-}
-
 /* Footer */
 footer {
   padding: 20px;
@@ -87,42 +72,15 @@ footer {
   background-color: white;
 }
 
-/* Animation for all sections */
-.curtain {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background-color: black;
-  z-index: 10;
-  transition: all 1s ease-out;
-}
-
-.left-curtain {
-  left: 0;
-}
-
-.right-curtain {
-  right: 0;
-}
-
-.loaded .left-curtain {
-  transform: translateX(-100%);
-}
-
-.loaded .right-curtain {
-  transform: translateX(100%);
-}
-
-
+/* Form */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 400px;
-  margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin-top: 20px;
 }
 input, textarea, button {
-  padding: 10px;
-  font-size: 16px;
+    padding: 10px;
+    font-size: 16px;
 }

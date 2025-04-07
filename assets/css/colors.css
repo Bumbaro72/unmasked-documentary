@@ -1,3 +1,107 @@
+/* Animation for all sections */
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    z-index: 10;
+    transition: all 1s ease-out;
+  }
+  
+  .left-curtain {
+    left: 0;
+  }
+  
+  .right-curtain {
+    right: 0;
+  }
+  
+  .loaded .left-curtain {
+    transform: translateX(-100%);
+  }
+  
+  .loaded .right-curtain {
+    transform: translateX(100%);
+  }
+
+  /* Color alternation */
+#whole-1 .left-half,
+#whole-3 .left-half,
+#whole-2 .right-half,
+#whole-4 .right-half {
+  background-color: #000;
+  color: white;
+}
+
+#whole-1 .right-half,
+#whole-3 .right-half,
+#whole-2 .left-half,
+#whole-4 .left-half {
+  background-color: white;
+  color: black;
+}
+
+/* WHOLE SECTIONS */
+.whole {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.half {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* CURTAIN ANIMATION */
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    z-index: 10;
+    transition: all 1s ease-out;
+}
+
+.curtain[data-side="left"] {
+    left: 0;
+}
+
+.curtain[data-side="right"] {
+    right: 0;
+}
+
+.loaded .curtain[data-side="left"] {
+    transform: translateX(-100%);
+}
+
+.loaded .curtain[data-side="right"] {
+    transform: translateX(100%);
+}
+
+ /* PRODUCTION-SPECIFIC COLORS */
+ #production-whole-1 .half.left,
+ #production-whole-3 .half.left,
+ #production-whole-2 .half.right,
+ #production-whole-4 .half.right {
+     background-color: black;
+     color: white;
+ }
+ 
+ #production-whole-1 .half.right,
+ #production-whole-3 .half.right,
+ #production-whole-2 .half.left,
+ #production-whole-4 .half.left {
+     background-color: white;
+     color: black;
+ }
+
 /* Contact Page Colors */
 #contact-whole-1 .half.left {
     background-color: white;

@@ -3,64 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNMASKED DÉMASQUÉ</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/colors.css">
+    <title>UNMASKED | CONTACT</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
     <script src="./assets/js/main.js"></script>
+    <!-- Netlify Form Support -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
-<!-- NAVIGATION -->
-<nav>
-  <div class="nav-left">
-      <a href="index.html">UNMASKED</a>
-      <a href="overview.html">OVERVIEW</a>
-      <a href="production.html">PRODUCTION</a>
-      <a href="gallery.html">GALLERY</a>
-      <a href="contact.html">CONTACT</a>
-  </div>
-  <div class="nav-right">
-      <a href="index.html">DÉMASQUÉ</a>
-      <a href="overview.html">APERÇU</a>
-      <a href="production.html">PRODUCTION</a>
-      <a href="gallery.html">GALERIE</a>
-      <a href="contact.html">CONTACT</a>
-  </div>
-</nav>
-
 <body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-left">
+            <a href="index.html">UNMASKED</a>
+            <a href="overview.html">OVERVIEW</a>
+            <a href="production.html">PRODUCTION</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+        <div class="nav-right">
+            <a href="index.html">DÉMASQUÉ</a>
+            <a href="overview.html">APERÇU</a>
+            <a href="production.html">PRODUCTION</a>
+            <a href="gallery.html">GALERIE</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </nav>
 
-  <!-- CONTACT CONTENT -->
-  <main>
-    <!-- Single Whole Section -->
-    <section class="whole" id="contact-whole-1">
-        <div class="curtain" data-side="left"></div>
-        <div class="curtain" data-side="right"></div>
-        
-        <!-- Left Half - Contact Form -->
-        <div class="half left">
-            <h1>CONTACT US</h1>
-            <form name="contact" netlify>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">SEND</button>
-            </form>
-        </div>
-        
-        <!-- Right Half - Social Media -->
-        <div class="half right">
-            <h1>NOUS CONTACTER</h1>
-            <div class="social-links">
-                <a href="https://twitter.com" target="_blank">Twitter</a>
-                <a href="https://instagram.com" target="_blank">Instagram</a>
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <!-- CONTACT CONTENT -->
+    <main>
+        <!-- Single Whole Section -->
+        <section class="whole" id="contact-whole-1">
+            <div class="curtain" data-side="left"></div>
+            <div class="curtain" data-side="right"></div>
+            
+            <!-- Left Half - Contact Form -->
+            <div class="half left">
+                <h1>CONTACT US</h1>
+                <form name="contact" netlify>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">SEND</button>
+                </form>
             </div>
-        </div>
-    </section>
-</main>
-    
-  </main>
-  <footer>
+            
+            <!-- Right Half - Social Media -->
+            <div class="half right">
+                <h1>NOUS CONTACTER</h1>
+                <div class="social-links">
+                    <a href="https://twitter.com" target="_blank">Twitter</a>
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
         <p>© 2023 UNMASKED DOCUMENTARY | ALL RIGHTS RESERVED</p>
     </footer>
+
+    <!-- Netlify Identity -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                });
+            });
+        }
+    </script>
 </body>
 </html>
