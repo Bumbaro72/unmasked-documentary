@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // Production-specific JS can be added here
 console.log('Production page loaded');
 
-<!-- Netlify Identity -->
 
     if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
