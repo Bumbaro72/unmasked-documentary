@@ -28,18 +28,4 @@ console.log('Production page loaded');
             });
         });
     }
-
-    const fadeContainers = document.querySelectorAll('.whole');
-
-    function handleFadeIn() {
-        fadeContainers.forEach(container => {
-            const rect = container.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                container.classList.add('visible');
-            }
-        });
-    }
-    
-    window.addEventListener('scroll', handleFadeIn);
-    window.addEventListener('load', handleFadeIn);
     
