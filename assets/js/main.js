@@ -19,3 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Production-specific JS can be added here
 console.log('Production page loaded');
+
+<!-- Netlify Identity -->
+
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+            if (!user) window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+            });
+        });
+    }
+
