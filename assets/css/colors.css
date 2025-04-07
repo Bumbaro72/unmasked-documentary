@@ -1,0 +1,9 @@
+/* Contact Page Colors */
+#contact-whole-1 .half.left {
+    background-color: white;
+    color: black;
+}
+#contact-whole-1 .half.right {
+    background-color: black;
+    color: white;
+}
