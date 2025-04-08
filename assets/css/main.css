@@ -1,5 +1,18 @@
  /* MAIN.CSS - GLOBAL STYLES */
 
+/* Reset za tijelo dokumenta */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Sprječava horizontalno scrollanje */
+}
+
+/* Osiguraj da svi elementi "poštuju" granice ekrana */
+* {
+  box-sizing: border-box; /* Uključuje padding i border u width */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +20,22 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.2rem;       /* Veličina teksta */
+line-height: 1.24;        /* Visina linije */
+letter-spacing: 0.5px;   /* Razmak između slova */
+word-spacing: 1px;       /* Razmak između riječi */
   color: white;
   background-color: white;
+}
+
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
 }
 
 /* Navigation - Split Screen */
@@ -65,11 +91,21 @@ nav a {
   justify-content: center;
 }
 
-/* Footer */
-footer {
-  padding: 20px;
+.site-footer {
+  background: #000;
+  color: #fff;
+  padding: 2rem;
   text-align: center;
-  background-color: black;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
 }
 
 /* Form */
