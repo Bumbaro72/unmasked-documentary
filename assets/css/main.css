@@ -304,7 +304,7 @@ h4:hover::after, h5:hover::after, h6:hover::after,
   width: 100%; /* Puni underline na hover */
 }
 
-/* Postavljamo početne postavke za curtains, a JS upravlja animacijom */
+/* Početno stanje za curtain, spremni za sužavanje */
 section.special .curtain[data-side="left"],
 section.special .curtain[data-side="right"] {
   position: absolute;
@@ -314,13 +314,70 @@ section.special .curtain[data-side="right"] {
 
 section.special .curtain[data-side="left"] {
   top: 0;
-  height: 50%;
+  height: 100%;
   left: 0;
+  transform-origin: top left;
 }
 
 section.special .curtain[data-side="right"] {
   bottom: 0;
-  height: 50%;
+  height: 100%;
   left: 0;
+  transform-origin: bottom left;
+}
+
+/* Sužavanje curtains */
+section.special.open .curtain[data-side="left"] {
+  transform: scaleY(0); /* Sužavanje prema gore */
+}
+
+section.special.open .curtain[data-side="right"] {
+  transform: scaleY(0); /* Sužavanje prema dolje */
+}
+
+/* Fade-in black screen */
+#intro-fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 9999;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+#intro-fade.hidden {
+  opacity: 0;
+}
+
+#intro-fade.fade-out {
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+}
+
+#grain-control {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  z-index: 10000;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+#grain-control:hover {
+  opacity: 1;
+}
+
+#grain-opacity {
+  width: 100px;
+  margin-left: 0.5rem;
 }
 
