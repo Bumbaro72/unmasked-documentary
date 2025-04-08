@@ -22,7 +22,7 @@ html, body {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'inter', sans-serif;
   letter-spacing: 0.01em; /* lagana čitljivost */
   word-spacing: 0.05em;   /* bolji ritam */
   font-size: 1.2rem;      /* Veličina teksta */
@@ -74,8 +74,8 @@ h6 {
 /* PARAGRAPH */
 
 p {
-  margin-bottom: 1.2rem;
-  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   letter-spacing: 0.01em;
   word-break: break-word;
@@ -285,6 +285,7 @@ h1, h2, h3, h4, h5, h6, .top-nav a {
   position: relative;
   display: inline-block;
   text-decoration: none !important; /* Ukloni defaultni underline */
+  padding-block: 0.4em;
 }
 
 h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, .top-nav a::after {
@@ -381,3 +382,27 @@ section.special.open .curtain[data-side="right"] {
   margin-left: 0.5rem;
 }
 
+
+/* Adding animations and responsiveness */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Prilagodba za mobilne uređaje */
+  }
+
+  .contact-left, .contact-right {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+}
