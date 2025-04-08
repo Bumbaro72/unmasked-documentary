@@ -1,11 +1,13 @@
  /* MAIN.CSS - GLOBAL STYLES */
 
 /* Reset za tijelo dokumenta */
+
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Sprječava horizontalno scrollanje */
+  font-size: 16px;
+  overflow-x: hidden;     /* Sprječava horizontalno scrollanje */
 }
 
 /* Osiguraj da svi elementi "poštuju" granice ekrana */
@@ -21,30 +23,91 @@ html, body {
 
 body {
   font-family: 'DM Sans', sans-serif;
-  font-size: 1.2rem;       /* Veličina teksta */
-  line-height: 1.24;        /* Visina linije */
-  letter-spacing: 0.5px;   /* Razmak između slova */
-  word-spacing: 1px;       /* Razmak između riječi */
+  letter-spacing: 0.01em; /* lagana čitljivost */
+  word-spacing: 0.05em;   /* bolji ritam */
+  font-size: 1.2rem;      /* Veličina teksta */
+  line-height: 1.24;      /* Visina linije */
+  letter-spacing: 0.5px;  /* Razmak između slova */
+  word-spacing: 1px;      /* Razmak između riječi */
   color: white;
   background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADINGS */
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  text-transform: none;   /* za kasnije eventualnu kontrolu */
+  word-break: break-word;
 }
 
 h1 {
-  font-size: 3.5rem;
-  letter-spacing: -1.5px;
-  line-height: 1;
-  text-transform: uppercase;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 2.5rem;
-  letter-spacing: -1.5px;
-  line-height: 1;
-  text-transform: uppercase;
-  font-weight: 800;
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* PARAGRAPH */
+
+p {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+}
+
+/* LINKS */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* LISTS */
+
+ul, ol {
+  margin: 0 0 1.5rem 1.5rem;
+  padding: 0;
+}
+
+li {
   margin-bottom: 0.5rem;
+}
+
+/* STRONG / EM */
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
 }
 
 /* Navigation - Split Screen */
@@ -196,20 +259,26 @@ input, textarea, button {
   transform: scale(1.05);
 }
 
-/* Fade-in za paragrafe - inicijalno 15% opacity, hover 100% */
+.underline-active::after {
+  width: 100%;
+}
+
+
+/* Fade-in za paragrafe - inicijalno 15% opacity, hover 100% 
+
 p {
   opacity: 0.15;
   transition: opacity 0.5s ease-out;
 }
 
 p:hover {
-  opacity: 1 !important; /* Forsiraj punu vidljivost na hover */
-}
+  opacity: 1 !important;
+}*/
 
-/* Opcionalno: spori hover-off efekt za dramatičniji "unmasking" osjećaj */
+/* Opcionalno: spori hover-off efekt za dramatičniji "unmasking" osjećaj 
 p {
   transition: opacity 0.1s cubic-bezier(0,0,.17,.95), opacity 0.5s cubic-bezier(0,.7,1,1) 0.2s; 
-}
+}*/
 
 /* Underline animacija za sve naslove (h1, h2, h3...) */
 h1, h2, h3, h4, h5, h6, .top-nav a {
@@ -233,5 +302,25 @@ h1:hover::after, h2:hover::after, h3:hover::after,
 h4:hover::after, h5:hover::after, h6:hover::after, 
 .top-nav a:hover::after {
   width: 100%; /* Puni underline na hover */
+}
+
+/* Postavljamo početne postavke za curtains, a JS upravlja animacijom */
+section.special .curtain[data-side="left"],
+section.special .curtain[data-side="right"] {
+  position: absolute;
+  width: 100%;
+  transition: transform 1s ease-out; /* Postavljanje osnovne transition logike */
+}
+
+section.special .curtain[data-side="left"] {
+  top: 0;
+  height: 50%;
+  left: 0;
+}
+
+section.special .curtain[data-side="right"] {
+  bottom: 0;
+  height: 50%;
+  left: 0;
 }
 

@@ -29,18 +29,43 @@ console.log('Production page loaded');
         });
     }
 
-    // Fade-in na scroll za <p> (samo)
-document.addEventListener('DOMContentLoaded', () => {
-    const paragraphs = document.querySelectorAll('p');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '0.15'; // Vrati na inicijalnu vrijednost
-        }
-      });
-    }, { threshold: 0.1 });
-  
-    paragraphs.forEach(p => observer.observe(p));
-  });
 
+    document.addEventListener('DOMContentLoaded', () => {
+        const leftHalf = document.querySelector('.left');
+        const rightHalf = document.querySelector('.right');
+      
+        const handleHover = (half, enter) => {
+          const texts = half.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
+          texts.forEach(el => {
+            if (enter) {
+              el.style.opacity = '1';
+              el.classList.add('underline-active');
+            } else {
+              el.style.opacity = '0.15';
+              el.classList.remove('underline-active');
+            }
+          });
+        };
+      
+        leftHalf.addEventListener('mouseenter', () => handleHover(leftHalf, true));
+        leftHalf.addEventListener('mouseleave', () => handleHover(leftHalf, false));
+      
+        rightHalf.addEventListener('mouseenter', () => handleHover(rightHalf, true));
+        rightHalf.addEventListener('mouseleave', () => handleHover(rightHalf, false));
+      });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const specials = document.querySelectorAll('section.special');
+      
+        specials.forEach(section => {
+          const left = section.querySelector('.curtain[data-side="left"]');
+          const right = section.querySelector('.curtain[data-side="right"]');
+      
+          // Pokrećemo animaciju samo kad su curtaini u poziciji za animaciju
+          setTimeout(() => {
+            left.style.transform = 'translateY(-100%)';  // Spuštamo lijevi curtain prema gore
+            right.style.transform = 'translateY(100%)'; // Spuštamo desni curtain prema dolje
+          }, 100); // Lagano kašnjenje za efekte
+        });
+      });
+      
