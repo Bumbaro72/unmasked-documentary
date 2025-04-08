@@ -20,17 +20,26 @@ html, body {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 1.2rem;       /* Veličina teksta */
-line-height: 1.24;        /* Visina linije */
-letter-spacing: 0.5px;   /* Razmak između slova */
-word-spacing: 1px;       /* Razmak između riječi */
+  line-height: 1.24;        /* Visina linije */
+  letter-spacing: 0.5px;   /* Razmak između slova */
+  word-spacing: 1px;       /* Razmak između riječi */
   color: white;
   background-color: white;
 }
 
 h1 {
   font-size: 3.5rem;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
   letter-spacing: -1.5px;
   line-height: 1;
   text-transform: uppercase;
