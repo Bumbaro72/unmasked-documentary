@@ -115,3 +115,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
+
+  document.querySelectorAll('.phase').forEach(phase => {
+    phase.addEventListener('mouseenter', function() {
+      const phaseId = this.getAttribute('data-phase');
+      // Highlight odabranu fazu
+      this.querySelector('circle').setAttribute('fill', '#ff3e3e');
+      
+      // Prikaži odgovarajući opis
+      document.querySelector(`.phase-desc[data-phase="${phaseId}"] p`)
+        .style.opacity = '1';
+    });
+    
+    phase.addEventListener('mouseleave', function() {
+      const phaseId = this.getAttribute('data-phase');
+      // Vrati na default stanje
+      this.querySelector('circle').setAttribute('fill', 'transparent');
+      
+      // Sakrij opis ako nije hover na cijelom modulu
+      if(!event.relatedTarget.closest('.hover-reveal')) {
+        document.querySelector(`.phase-desc[data-phase="${phaseId}"] p`)
+          .style.opacity = '0';
+      }
+    });
+  });
+  
+  document.querySelectorAll('.phase-point').forEach(point => {
+    point.addEventListener('mouseenter', function() {
+      const phaseNum = this.getAttribute('data-phase');
+      
+      // Reset all
+      document.querySelectorAll('.phase').forEach(p => {
+        p.classList.remove('active');
+      });
+      
+      // Activate corresponding phase
+      document.querySelector(`.phase[data-phase="${phaseNum}"]`).classList.add('active');
+      
+      // Pulse animation
+      this.querySelector('circle').animate([
+        { transform: 'scale(1)' },
+        { transform: 'scale(1.3)' },
+        { transform: 'scale(1)' }
+      ], { duration: 500 });
+    });
+  });
+
+  // Glavna interakcija
+document.getElementById('timelineTrigger').addEventListener('mouseenter', function() {
+  const dots = document.querySelectorAll('.phase-dot');
+  dots.forEach((dot, i) => {
+    dot.style.opacity = '1';
+    dot.style.transitionDelay = `${i * 0.1}s`;
+  });
+});
+
+// Reset na mouseleave
+document.getElementById('timelineTrigger').addEventListener('mouseleave', function() {
+  document.querySelectorAll('.phase-dot').forEach(dot => {
+    dot.style.opacity = '0.5';
+  });
+});
