@@ -439,20 +439,6 @@
   text-shadow: 1px 1px 3px #000;
 }
 
-.clap-title3 {
-  font-family: 'Courier New', monospace;
-  font-size: 34px;
-  fill: #be1818;
-  text-shadow: 1px 1px 3px #000;
-}
-
-.clap-titleEN2 {
-  font-family: 'Courier New', monospace;
-  font-size: 18px;
-  fill: #a6cf11;
-  text-shadow: 1px 1px 3px #000;
-}
-
 .clap-content {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
@@ -509,3 +495,4 @@
 .film-clapboard {
   filter: url(#filmGrain);
 }
+

@@ -192,3 +192,5 @@ document.querySelectorAll('.partner-grid image').forEach(logo => {
   });
 });
 
+
+
