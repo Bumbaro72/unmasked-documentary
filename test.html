@@ -45,6 +45,36 @@
 
         <div class="buttons">
             <button onclick="alert('More animations coming soon!')">More Effects</button>
+
+            <g class="clap-segment" data-section="funding">
+              <rect x="60" y="210" width="480" height="80" fill="transparent"/>
+              <text x="70" y="240" class="clap-title">Funding</text>
+              <image x="70" y="250" width="40" height="40" xlink:href="eu-flag.svg"/>
+              <text x="120" y="275" class="clap-content">3 international grants</text>
+            </g>
+
+            <div class="crew-card">
+              <img src="director.jpg" alt="Redatelj" class="blurred">
+              <h4>Redatelj</h4>
+              <p>Ime Prezime</p>
+              <button class="reveal-btn">Unmask</button>
+            </div>
+            <svg class="budget-chart">
+              <!-- Animirani pie chart -->
+              <path class="chart-segment" d="..." fill="#ff3e3e" data-percent="35">
+                <title>Predprodukcija - 35%</title>
+              </path>
+              <!-- Ostali segmenti -->
+            </svg>
+            
+            <div class="budget-legend">
+              <div class="legend-item" data-category="pre-production">
+                <span class="color-box" style="background:#ff3e3e;"></span>
+                <span class="category-name">Predprodukcija</span>
+                <span class="percent">35%</span>
+              </div>
+            </div>
+
         </div><svg class="organic-timeline" viewBox="0 0 100 20">
             <path d="M10,10 C20,5 40,15 50,10 S80,5 90,15" 
                   stroke="#ff6b6b" 
@@ -56,11 +86,6 @@
             </path>
           </svg>
 
-        <svg viewBox="0 0 100 100" class="fragmented-portrait">
-            <polygon points="10,20 40,50 30,80" fill="rgba(255,255,255,0.1)" stroke="#fff" stroke-width="0.3"/>
-            <circle cx="70" cy="40" r="5" fill="none" stroke="#fff" stroke-width="0.2"/>
-            <!-- Dodaj više fragmentarnih oblika -->
-          </svg>
           
           <svg class="locked-budget" viewBox="0 0 50 50">
             <rect x="15" y="20" width="20" height="15" rx="2" fill="none" stroke="#fff" stroke-width="0.5"/>
@@ -113,7 +138,7 @@
         <hr class="divider">
 
     <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/home.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html> 

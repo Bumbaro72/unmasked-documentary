@@ -360,9 +360,9 @@
 }
 
 .phase-title {
-  opacity: 0.2;
+  opacity: 0.3;
   font-size: 22px;
-  fill: #808080;
+  fill: #333;
   transition: opacity 0.3s;
 }
 
@@ -400,4 +400,112 @@
 
 @keyframes drawLine {
   to { stroke-dashoffset: 0; }
+}
+
+.film-clapboard {
+  width: 100%;
+  max-width: 800px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.clapboard-line {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawLine 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.clap-segment:hover {
+  rect {
+    stroke: #ff3e3e;
+    stroke-dasharray: 5,3;
+  }
+  .clap-content {
+    fill: #ffffff;
+  }
+}
+
+.clap-title {
+  font-family: 'Courier New', monospace;
+  font-size: 34px;
+  fill: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.clap-title2 {
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  fill: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.clap-title3 {
+  font-family: 'Courier New', monospace;
+  font-size: 34px;
+  fill: #be1818;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.clap-titleEN2 {
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  fill: #a6cf11;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.clap-content {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  fill: #cccccccc;
+  transition: all 0.3s;
+}
+
+.funding-meter {
+  background: rgba(255,255,255,0.2);
+  height: 30px;
+  margin: 20px 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.progress {
+  background: linear-gradient(90deg, #ff3e3e, #ffeb3b);
+  height: 100%;
+  position: relative;
+}
+
+.progress span {
+  position: absolute;
+  right: 10px;
+  color: black;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.action-text {
+  filter: drop-shadow(0 0 8px rgba(255,235,59,0.6));
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.partner-grid image {
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.partner-grid image:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Animacija treperenja ACTION teksta */
+@keyframes pulse-glow {
+  0% { opacity: 0.7; filter: drop-shadow(0 0 5px rgba(255,235,59,0.3)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 15px rgba(255,235,59,0.8)); }
+  100% { opacity: 0.7; filter: drop-shadow(0 0 5px rgba(255,235,59,0.3)); }
+}
+
+.film-clapboard {
+  filter: url(#filmGrain);
 }

@@ -176,3 +176,19 @@ document.getElementById('timelineTrigger').addEventListener('mouseleave', functi
     dot.style.opacity = '0.5';
   });
 });
+
+
+
+// Rotacija partner logoa na hover
+document.querySelectorAll('.partner-grid image').forEach(logo => {
+  logo.addEventListener('mouseenter', function() {
+    this.closest('rect').style.stroke = '#ff3e3e';
+    this.style.filter = 'drop-shadow(0 0 5px rgba(255,235,59,0.8))';
+  });
+  
+  logo.addEventListener('click', function() {
+    // Otvori modal s detaljima partnera
+    showPartnerModal(this.getAttribute('xlink:href'));
+  });
+});
+

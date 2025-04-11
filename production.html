@@ -142,24 +142,152 @@
             
             <div class="half left">
                 <h2>Budget Overview</h2>
-                <p>Estimating budget, a rough breakdown of the potential costs based on typical European production values for a mid-range project:
-                    Pre-production
-                    Production
-                    Post-production
-                    Distribution & Marketing
-                    Total Estimated Budget
-                </p>
+                <p>Estimating budge</p>
+                <svg class="film-clapboard" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Transparentnost Pattern -->
+                    <defs>
+                      <pattern id="transparency" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <rect width="10" height="10" fill="#fff"/>
+                        <rect x="10" y="10" width="10" height="10" fill="#fff"/>
+                        <rect x="10" y="0" width="10" height="10" fill="#ccc"/>
+                        <rect x="0" y="10" width="10" height="10" fill="#ccc"/>
+                      </pattern>
+                    </defs>
+                </svg>
+                <div class="clapboard-container">
+                    <svg class="film-clapboard" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                      <!-- Osnovni okvir klape (horizontalni elementi) -->
+                      <path class="clapboard-line" d="M50,60 L550,60" stroke="#000000" stroke-width="2"/>
+                      <path class="clapboard-line" d="M50,100 L550,100" stroke="#000000" stroke-width="2"/>
+                      <path class="clapboard-line" d="M50,240 L550,240" stroke="#000000" stroke-width="2"/>
+                      <path class="clapboard-line" d="M50,340 L550,340" stroke="#000000" stroke-width="2"/>
+                      <path class="clapboard-line" d="M50,380 L550,380" stroke="#000000" stroke-width="2"/>
+                      <!-- Vertikalni "reset" stroke (animirani) -->
+                      <path class="clapboard-reset" d="M50,100 L50,420" stroke="#000000" stroke-width="2" 
+                            stroke-dasharray="340" stroke-dashoffset="340">
+                        <animate attributeName="stroke-dashoffset" values="340;0" dur="1.5s" fill="freeze"/>
+                      </path>
+                      <path class="clapboard-reset" d="M300,100 L300,420" stroke="#000000" stroke-width="2" 
+                            stroke-dasharray="140" stroke-dashoffset="140">
+                        <animate attributeName="stroke-dashoffset" values="140;0" dur="1.5s" fill="freeze"/>
+                      </path>
+                      <path class="clapboard-reset" d="M550,100 L550,420" stroke="#000000" stroke-width="2" 
+                            stroke-dasharray="140" stroke-dashoffset="140">
+                        <animate attributeName="stroke-dashoffset" values="140;0" dur="1.5s" fill="freeze"/>
+                      </path>
+                      <path class="clapboard-reset" d="M110,80 L500,80" stroke="#000000" stroke-width="34" 
+                      stroke-dasharray="55" stroke-dashoffset="40">
+                        <animate attributeName="stroke-dashoffset" values="20;0" dur="1.5s" fill="freeze"/>
+                        </path>
+                      
+                      <!-- Interaktivni segmenti -->
+                      <g class="clap-segment" data-section="budget">
+                        <rect x="60" y="110" width="230" height="120" fill="transparent" stroke="transparent" stroke-width="2"/>
+                        <text x="70" y="150" class="clap-title">Budget</text>
+                        <text x="70" y="180" class="clap-content">GRANTS</text>
+                        <text x="70" y="200" class="clap-content">Co-PRODUCTIONS</text>
+                        <text x="70" y="220" class="clap-content">TAX SHELTER </text>
+                        <rect x="60" y="350" width="480" height="26" fill="transparent" stroke="transparent" stroke-width="2"/>
+                        <text x="70" y="368" class="clap-title2">Producer, Director, DOP: Zoran Mikletić</text>
+                      </g>
+                      
+                      <!-- Dodaj još 2 segmenta (y=210 i y=310) -->
+                       <!-- Transparentno Polje -->
+                    <rect x="300" y="100" width="250" height="140" fill="url(#transparency)" rx="5"/>
+                    <text x="390" y="144" text-anchor="middle" font-size="18" fill="#000000">Budget Overview</text>
+                    <text x="425" y="180" text-anchor="middle" font-size="20" fill="#000000" font-weight="bold">FULL TRANSPARENT</text>
+                    <text x="300" y="310" text-anchor="middle" font-size="64" fill="#BCBCBC" class="action-text">
+                        ACTION
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
+                      </text>
+                      <!-- Partners -->
+                      <g class="partner-grid" transform="translate(60, 390)">
+                        <rect x="0" y="0" width="110" height="28" fill="#ffffff" stroke="#505050" rx="3"/>
+                        <image x="10" y="10" width="80" height="20" xlink:href="partner1.svg" opacity="0.8"/>
+                      </g>
+                      <g class="partner-grid" transform="translate(180, 390)">
+                        <rect x="0" y="0" width="110" height="28" fill="#ffffff" stroke="#505050" rx="3"/>
+                        <image x="10" y="10" width="80" height="20" xlink:href="partner1.svg" opacity="0.8"/>
+                      </g>
+                      <g class="partner-grid" transform="translate(310, 390)">
+                        <rect x="0" y="0" width="110" height="28" fill="#ffffff" stroke="#505050" rx="3"/>
+                        <image x="10" y="10" width="80" height="20" xlink:href="partner1.svg" opacity="0.8"/>
+                      </g>
+                      <g class="partner-grid" transform="translate(430, 390)">
+                        <rect x="0" y="0" width="110" height="28" fill="#ffffff" stroke="#505050" rx="3"/>
+                        <image x="10" y="10" width="80" height="20" xlink:href="partner1.svg" opacity="0.8"/>
+                      </g>
+                    </svg>
+                  </div>
             </div>
             <div class="half right">
                 <h2>Aperçu du Budget</h2>
-                <p>Aperçu du Budget
-                    Une répartition approximative des coûts potentiels, basée sur les standards de production européens pour un projet de milieu de gamme :
-                    Pre-production
-                    Production
-                    Post-production
-                    Festivals & Promotion
-                    Budget Total Estimé
-                    </p>
+                <p>Aperçu du Budget</p>
+                <div class="clapboard-container">
+                    <svg class="film-clapboard" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                      <!-- Osnovni okvir klape (horizontalni elementi) -->
+                      <path class="clapboard-line" d="M50,60 L550,60" stroke="#ffffff" stroke-width="2"/>
+                      <path class="clapboard-line" d="M50,100 L550,100" stroke="#ffffff" stroke-width="2"/>
+                      <path class="clapboard-line" d="M50,340 L550,340" stroke="#ffffff" stroke-width="2"/>
+                      <path class="clapboard-line" d="M50,240 L550,240" stroke="#ffffff" stroke-width="2"/>
+                      <path class="clapboard-line" d="M50,380 L550,380" stroke="#ffffff" stroke-width="2"/>
+                      <path class="clapboard-reset" d="M110,80 L500,80" stroke="#ffffff" stroke-width="34" 
+                      stroke-dasharray="55" stroke-dashoffset="40">
+                        <animate attributeName="stroke-dashoffset" values="20;0" dur="1.5s" fill="freeze"/>
+                        </path>
+                      <!-- Vertikalni "reset" stroke (animirani) -->
+                      <path class="clapboard-reset" d="M50,100 L50,420" stroke="#ffffff" stroke-width="2" 
+                            stroke-dasharray="340" stroke-dashoffset="340">
+                        <animate attributeName="stroke-dashoffset" values="340;0" dur="1.5s" fill="freeze"/>
+                      </path>
+                      <path class="clapboard-reset" d="M300,100 L300,420" stroke="#ffffff" stroke-width="2" 
+                            stroke-dasharray="140" stroke-dashoffset="140">
+                        <animate attributeName="stroke-dashoffset" values="140;0" dur="1.5s" fill="freeze"/>
+                      </path>
+                      <path class="clapboard-reset" d="M550,100 L550,420" stroke="#ffffff" stroke-width="2" 
+                            stroke-dasharray="140" stroke-dashoffset="140">
+                        <animate attributeName="stroke-dashoffset" values="140;0" dur="1.5s" fill="freeze"/>
+                      </path>
+                      
+                      <!-- Interaktivni segmenti -->
+                      <g class="clap-segment" data-section="budget">
+                        <rect x="60" y="110" width="230" height="130" fill="transparent" stroke="transparent" stroke-width="2"/>
+                        <text x="70" y="150" class="clap-title">Budget</text>
+                        <text x="70" y="180" class="clap-content">GRANTS</text>
+                        <text x="70" y="200" class="clap-content">Co-PRODUCTIONS</text>
+                        <text x="70" y="220" class="clap-content">TAX SHELTER </text>
+                        <rect x="60" y="350" width="480" height="26" fill="transparent" stroke="transparent" stroke-width="2"/>
+                        <text x="70" y="368" class="clap-title2">Producer, Director, DOP: Zoran Mikletić</text>
+                      </g>
+                      
+                      <!-- Dodaj još 2 segmenta (y=210 i y=310) -->
+                       <!-- Transparentno Polje -->
+                    <rect x="300" y="100" width="250" height="140" fill="url(#transparency)" rx="5"/>
+                    <text x="390" y="144" text-anchor="middle" font-size="18" fill="#000000">Budget Overview</text>
+                    <text x="425" y="180" text-anchor="middle" font-size="20" fill="#000000" font-weight="bold">FULL TRANSPARENT</text>
+                    <text x="300" y="310" text-anchor="middle" font-size="64" fill="#BCBCBC" class="action-text">
+                        ACTION
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
+                      </text>
+                      <!-- Partners -->
+                      <g class="partner-grid" transform="translate(60, 390)">
+                        <rect x="0" y="0" width="110" height="28" fill="#080808" stroke="#505050" rx="3"/>
+                        <image x="10" y="10" width="80" height="20" xlink:href="partner1.svg" opacity="0.8"/>
+                      </g>
+                      <g class="partner-grid" transform="translate(180, 390)">
+                        <rect x="0" y="0" width="110" height="28" fill="#080808" stroke="#505050" rx="3"/>
+                        <image x="10" y="10" width="80" height="20" xlink:href="partner1.svg" opacity="0.8"/>
+                      </g>
+                      <g class="partner-grid" transform="translate(310, 390)">
+                        <rect x="0" y="0" width="110" height="28" fill="#080808" stroke="#505050" rx="3"/>
+                        <image x="10" y="10" width="80" height="20" xlink:href="partner1.svg" opacity="0.8"/>
+                      </g>
+                      <g class="partner-grid" transform="translate(430, 390)">
+                        <rect x="0" y="0" width="110" height="28" fill="#080808" stroke="#505050" rx="3"/>
+                        <image x="10" y="10" width="80" height="20" xlink:href="partner1.svg" opacity="0.8"/>
+                      </g>
+                    </svg>
+                  </div>
             </div>
         </section>
         
@@ -169,12 +297,15 @@
             <div class="curtain" data-side="right"></div>
             
             <div class="half left">
-                <h2>FUNDING</h2>
-                <p>On-location shooting details</p>
+                
             </div>
             <div class="half right">
-                <h2>FUNDING</h2>
-                <p>Détails des prises de vue</p>
+                <div class="clapboard-container">
+                    <div class="half right">
+                        <h1>Chronologie</h1>
+                        <p>Subtitle</p>
+                  </div>
+                </div>
             <details>
                 <summary>Click to expand</summary>
                     <p>This is hidden content.</p>
