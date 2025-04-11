@@ -497,7 +497,15 @@
 }
 
 .film-screen {
-  background: #111;
+  background: #080808;
+  border: 2px solid rgba(129, 129, 129, 0.582);  /* Filmski okvir */
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.film-screen-2 {
+  background: #EDEDED;
   border: 2px solid rgba(129, 129, 129, 0.582);  /* Filmski okvir */
   height: 400px;
   overflow: hidden;
@@ -511,10 +519,17 @@
   color: white;
   animation: scrollCredits 20s linear infinite;
 }
+.credits-scroll-2 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: #=(=(=()));
+  animation: scrollCredits 20s linear infinite;
+}
 
 @keyframes scrollCredits {
   00% { transform: translateY(40%); }
-  100% { transform: translateY(-90%); }
+  100% { transform: translateY(-92%); }
 }
 
 .film-screen::before {
