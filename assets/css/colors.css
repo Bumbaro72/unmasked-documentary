@@ -496,3 +496,35 @@
   filter: url(#filmGrain);
 }
 
+.film-screen {
+  background: #111;
+  border: 2px solid rgba(129, 129, 129, 0.582);  /* Filmski okvir */
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.credits-scroll {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  animation: scrollCredits 20s linear infinite;
+}
+
+@keyframes scrollCredits {
+  00% { transform: translateY(40%); }
+  100% { transform: translateY(-90%); }
+}
+
+.film-screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.1"/></svg>');
+  pointer-events: none;
+  z-index: 1;
+}

@@ -384,6 +384,7 @@ section.special.open .curtain[data-side="right"] {
 
 #grain-opacity {
   width: 100px;
+  height: 100%;
   margin-left: 0.5rem;
 }
 
