@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     phase.addEventListener('mouseenter', function() {
       const phaseId = this.getAttribute('data-phase');
       // Highlight odabranu fazu
-      this.querySelector('circle').setAttribute('fill', '#ff3e3e');
+      this.querySelector('circle').setAttribute('fill', '#dddddd');
       
       // Prikaži odgovarajući opis
       document.querySelector(`.phase-desc[data-phase="${phaseId}"] p`)
@@ -182,7 +182,7 @@ document.getElementById('timelineTrigger').addEventListener('mouseleave', functi
 // Rotacija partner logoa na hover
 document.querySelectorAll('.partner-grid image').forEach(logo => {
   logo.addEventListener('mouseenter', function() {
-    this.closest('rect').style.stroke = '#ff3e3e';
+    this.closest('rect').style.stroke = '#dddddd';
     this.style.filter = 'drop-shadow(0 0 5px rgba(255,235,59,0.8))';
   });
   

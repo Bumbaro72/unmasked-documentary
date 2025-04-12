@@ -356,18 +356,33 @@
 
 .phase-point:hover circle {
   fill: #7c7c7c;
-  filter: drop-shadow(0 0 8px rgba(255,62,62,0.6));
+  filter: drop-shadow(0 0 8px #848484);
 }
 
 .phase-title {
-  opacity: 0.3;
+  opacity: 0.1;
   font-size: 22px;
-  fill: #333;
+  fill: #fff;
   transition: opacity 0.3s;
 }
 
-.phase-title2 {
-  opacity: 0.8;
+.phase-subtitle {
+  opacity: 0.9;
+  font-size: 16px;
+  font-style: italic;
+  fill: #dfdfdf;
+  transition: opacity 0.3s;
+}
+
+.phase-title-fr {
+  opacity: 0.1;
+  font-size: 22px;
+  fill: #000;
+  transition: opacity 0.3s;
+}
+
+.phase-subtitle-fr {
+  opacity: 0.9;
   font-size: 16px;
   font-style: italic;
   fill: #444;
@@ -375,6 +390,10 @@
 }
 
 .phase-point:hover .phase-title {
+  opacity: 1;
+}
+
+.phase-point:hover .phase-title-fr {
   opacity: 1;
 }
 
@@ -404,7 +423,6 @@
 
 .film-clapboard {
   width: 100%;
-  max-width: 800px;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
 }
 
@@ -417,32 +435,45 @@
 
 .clap-segment:hover {
   rect {
-    stroke: #ff3e3e;
+    stroke: #a4a4a4;
     stroke-dasharray: 5,3;
   }
-  .clap-content {
+  .clap-content, .clap-content2 {
     fill: #ffffff;
   }
 }
 
 .clap-title {
-  font-family: 'Courier New', monospace;
-  font-size: 34px;
+  font-size: 22px;
   fill: #fff;
-  text-shadow: 1px 1px 3px #000;
 }
 
 .clap-title2 {
-  font-family: 'Courier New', monospace;
-  font-size: 18px;
-  fill: #fff;
-  text-shadow: 1px 1px 3px #000;
+  font-size: 22px;
+  fill: #000000;
 }
+.clap-segment:hover {
+  rect {
+    stroke: #a4a4a4;
+    stroke-dasharray: 5,3;
+  }
+ .clap-content2 {
+    fill: #000000;
+  }
+}
+
 
 .clap-content {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  fill: #cccccccc;
+  fill: #cccccc58;
+  transition: all 0.3s;
+}
+
+.clap-content2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  fill: #cccccc58;
   transition: all 0.3s;
 }
 
@@ -455,7 +486,7 @@
 }
 
 .progress {
-  background: linear-gradient(90deg, #ff3e3e, #ffeb3b);
+  background: linear-gradient(90deg, #dddddd, #ffeb3b);
   height: 100%;
   position: relative;
 }
@@ -497,19 +528,25 @@
 }
 
 .film-screen {
+  zoom: 0.7;
   background: #080808;
   border: 2px solid rgba(129, 129, 129, 0.582);  /* Filmski okvir */
   height: 400px;
   overflow: hidden;
   position: relative;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
 .film-screen-2 {
+  zoom: 0.7;
   background: #EDEDED;
   border: 2px solid rgba(129, 129, 129, 0.582);  /* Filmski okvir */
   height: 400px;
   overflow: hidden;
   position: relative;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
 .credits-scroll {
@@ -542,4 +579,201 @@
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.1"/></svg>');
   pointer-events: none;
   z-index: 1;
+}
+
+
+.empty-scene {
+  height: 150px;
+  background: repeating-linear-gradient(
+      45deg,
+      #222,
+      #222 10px,
+      #333 10px,
+      #333 20px
+  );
+  margin: 10px 0;
+  position: relative;
+}
+
+#director-btn {
+  background: #ff0;
+  color: black;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#director-btn:hover {
+  transform: scale(1.1);
+}
+
+/* CSS */
+.clapperboard {
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+  perspective: 500px;
+}
+
+.clapper-lines {
+  height: 20px;
+  background: repeating-linear-gradient(
+      -45deg,
+      #ff0,
+      #ff0 10px,
+      black 10px,
+      black 20px
+  );
+  margin-bottom: -5px;
+  transform: skewX(20deg);
+}
+
+.clapper-panel {
+  background: black;
+  color: #ff0;
+  padding: 20px;
+  border: 2px solid #ff0;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.budget-label {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.budget-transparent {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clapper-panel:hover .budget-transparent {
+  opacity: 1;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23000"/><text x="50%" y="50%" fill="%23ff0" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle">🎬 CINEMA SECRETS 🎬</text></svg>');
+}
+
+.budget-transparent span {
+  font-size: 0.8em;
+  color: white;
+  margin-top: 5px;
+}
+
+/* CSS */
+.clapperboard {
+  width: 600px;
+  height: 500px;
+  margin: 40px auto;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.clapper-top {
+  display: flex;
+  height: 160px;
+}
+
+.clapper-left {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-right: 2px solid #fff;
+}
+
+.clapper-left-en {
+  background: #ffffff;
+  color: #d31b1b;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-right: 2px solid #000000;
+}
+
+.clapper-right {
+  background: #000;
+  color: #fff;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.normal-view, .hover-view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+  font-weight: bold;
+}
+
+.normal-view2, .hover-view2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+.hover-view {
+  background: rgba(0,0,0,0.8);
+  color: #ff0;
+  opacity: 0;
+}
+
+.clapper-right:hover .normal-view {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.clapper-right:hover .hover-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.clapper-bottom {
+  background: #ffffff;
+  color: white;
+  /*! padding: 20px; */
+  text-align: center;
+}
+
+.clapper-bottom-fr {
+  background: #000000;
+  color: white;
+  /*! padding: 20px; */
+  text-align: center;
 }
