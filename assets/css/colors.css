@@ -528,7 +528,7 @@
 }
 
 .film-screen {
-  zoom: 0.7;
+  zoom: 0.75;
   background: #080808;
   border: 2px solid rgba(129, 129, 129, 0.582);  /* Filmski okvir */
   height: 400px;
@@ -539,7 +539,7 @@
 }
 
 .film-screen-2 {
-  zoom: 0.7;
+  zoom: 0.75;
   background: #EDEDED;
   border: 2px solid rgba(129, 129, 129, 0.582);  /* Filmski okvir */
   height: 400px;
