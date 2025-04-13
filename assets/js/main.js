@@ -1,31 +1,44 @@
 // Global animation trigger
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-        document.querySelectorAll('.whole').forEach(section => {
-            section.classList.add('loaded');
-        });
-    }, 100);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("loaded");
+          observer.unobserve(entry.target); // Samo jednom
+        }
+      });
+    },
+    {
+      threshold: 0.3, // 30% mora biti vidljivo da se aktivira
+    }
+  );
+
+  document.querySelectorAll(".whole").forEach((section) => {
+    observer.observe(section);
+  });
 });
+
 
 // Production-specific JS can be added here
 console.log('Production page loaded');
-
-
  if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
             if (!user) window.netlifyIdentity.on("login", () => {
                 document.location.href = "/admin/";
             });
         });
-    }
+  }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        // Nađi sve sekcije koje imaju lijevu i desnu polovicu
-        const allLeftHalves = document.querySelectorAll('.left');
-        const allRightHalves = document.querySelectorAll('.right');
-      
-        const handleHover = (half, enter) => {
-          const texts = half.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
+// Sekcije koje imaju lijevu i desnu polovicu
+ document.addEventListener('DOMContentLoaded', () => {
+  const allLeftHalves = document.querySelectorAll('.left');
+  const allRightHalves = document.querySelectorAll('.right');
+
+  const handleHover = (half, enter) => {
+    const texts = half.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
           texts.forEach(el => {
             if (enter) {
               el.style.opacity = '1';
@@ -33,49 +46,46 @@ console.log('Production page loaded');
             } else {
               el.style.opacity = '0.15';
               el.classList.remove('underline-active');
-            }
-          });
-        };
-      
-        allLeftHalves.forEach(leftHalf => {
-          leftHalf.addEventListener('mouseenter', () => handleHover(leftHalf, true));
-          leftHalf.addEventListener('mouseleave', () => handleHover(leftHalf, false));
-        });
-      
-        allRightHalves.forEach(rightHalf => {
-          rightHalf.addEventListener('mouseenter', () => handleHover(rightHalf, true));
-          rightHalf.addEventListener('mouseleave', () => handleHover(rightHalf, false));
-        });
-      });
-      
+       }
+    });
+  };
 
+  allLeftHalves.forEach(leftHalf => {
+    leftHalf.addEventListener('mouseenter', () => handleHover(leftHalf, true));
+    leftHalf.addEventListener('mouseleave', () => handleHover(leftHalf, false));
+  });
 
-    
+  allRightHalves.forEach(rightHalf => {
+    rightHalf.addEventListener('mouseenter', () => handleHover(rightHalf, true));
+    rightHalf.addEventListener('mouseleave', () => handleHover(rightHalf, false));
+  });
+});
 
-      document.addEventListener('DOMContentLoaded', () => {
-        const sections = document.querySelectorAll('section.special');  // Pronađi sve sekcije s class "special"
-      
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('open');  // Dodajemo 'open' kad sekcija uđe u vidokrug
-            } else {
-              entry.target.classList.remove('open');  // Uklonimo 'open' kad sekcija izađe iz vidokruga
-            }
-          });
-        }, { threshold: 0.5 });  // Trigger kada sekcija bude 50% u vidokrugu
-      
-        sections.forEach(section => observer.observe(section));  // Aktiviraj observer na svakoj sekciji
-      });
-      
-      // Cinematic intro fade-in
+// Pronađi sve sekcije s class "special"
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('section.special');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('open');  // Dodajemo 'open' kad sekcija uđe u vidokrug
+      } else {
+        entry.target.classList.remove('open');  // Uklonimo 'open' kad sekcija izađe iz vidokruga
+}
+    });
+  }, { threshold: 0.5 });  // Trigger kada sekcija bude 50% u vidokrugu
+
+  sections.forEach(section => observer.observe(section));  // Aktiviraj observer na svakoj sekciji
+});
+
+// Cinematic intro fade-in
 document.addEventListener('DOMContentLoaded', () => {
     const fadeLayer = document.createElement('div');
     fadeLayer.id = 'intro-fade';
     document.body.appendChild(fadeLayer);
 
     setTimeout(() => {
-        fadeLayer.classList.add('hidden');
+  fadeLayer.classList.add('hidden');
     }, 50); // možeš prilagoditi kašnjenje ako želiš dramatičnije
 });
 
@@ -85,14 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(fadeLayer);
 
     setTimeout(() => {
-        fadeLayer.classList.add('hidden');
+  fadeLayer.classList.add('hidden');
     }, 50);
 
-    // F A D E   O U T   on navigation
-    document.querySelectorAll('a').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && !href.startsWith('#') && !href.startsWith('mailto')) {
-            link.addEventListener('click', function(e) {
+// F A D E   O U T   on navigation
+document.querySelectorAll('a').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href && !href.startsWith('#') && !href.startsWith('mailto')) {
+      link.addEventListener('click', function(e) {
                 e.preventDefault();
                 fadeLayer.classList.remove('hidden');
                 fadeLayer.classList.add('fade-out');
@@ -115,8 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-
-  document.querySelectorAll('.phase').forEach(phase => {
+// Tocke
+document.querySelectorAll('.phase').forEach(phase => {
     phase.addEventListener('mouseenter', function() {
       const phaseId = this.getAttribute('data-phase');
       // Highlight odabranu fazu
@@ -127,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .style.opacity = '1';
     });
     
-    phase.addEventListener('mouseleave', function() {
+phase.addEventListener('mouseleave', function() {
       const phaseId = this.getAttribute('data-phase');
       // Vrati na default stanje
       this.querySelector('circle').setAttribute('fill', 'transparent');
@@ -140,28 +150,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-  document.querySelectorAll('.phase-point').forEach(point => {
+document.querySelectorAll('.phase-point').forEach(point => {
     point.addEventListener('mouseenter', function() {
       const phaseNum = this.getAttribute('data-phase');
       
-      // Reset all
-      document.querySelectorAll('.phase').forEach(p => {
+// Reset all
+document.querySelectorAll('.phase').forEach(p => {
         p.classList.remove('active');
       });
       
-      // Activate corresponding phase
-      document.querySelector(`.phase[data-phase="${phaseNum}"]`).classList.add('active');
+// Activate corresponding phase
+document.querySelector(`.phase[data-phase="${phaseNum}"]`).classList.add('active');
       
-      // Pulse animation
-      this.querySelector('circle').animate([
-        { transform: 'scale(1)' },
-        { transform: 'scale(1.3)' },
-        { transform: 'scale(1)' }
-      ], { duration: 500 });
-    });
-  });
+// Pulse animation
+this.querySelector('circle').animate([
+      { transform: 'scale(1)' },
+      { transform: 'scale(1.3)' },
+      { transform: 'scale(1)' }
+     ], { duration: 500 });
+   });
+});
 
-  // Glavna interakcija
+// Glavna interakcija
 document.getElementById('timelineTrigger').addEventListener('mouseenter', function() {
   const dots = document.querySelectorAll('.phase-dot');
   dots.forEach((dot, i) => {
@@ -177,8 +187,6 @@ document.getElementById('timelineTrigger').addEventListener('mouseleave', functi
   });
 });
 
-
-
 // Rotacija partner logoa na hover
 document.querySelectorAll('.partner-grid image').forEach(logo => {
   logo.addEventListener('mouseenter', function() {
@@ -193,4 +201,23 @@ document.querySelectorAll('.partner-grid image').forEach(logo => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("loaded");
+          observer.unobserve(entry.target); // Samo jednom
+        }
+      });
+    },
+    {
+      threshold: 0.3, // 30% mora biti vidljivo da se aktivira
+    }
+  );
+
+  document.querySelectorAll(".whole").forEach((section) => {
+    observer.observe(section);
+  });
+});
 
