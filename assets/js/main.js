@@ -16,9 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelectorAll(".whole").forEach((section) => {
     observer.observe(section);
+    document.querySelectorAll(".whole.special").forEach((section) => {
+      // Posebna logika samo za tu sekciju
+    });
+    
   });
 });
 
+document.querySelectorAll(".whole").forEach((section) => {
+  console.log("Observing section:", section.id);
+  observer.observe(section);
+});
 
 
 // Production-specific JS can be added here
@@ -220,3 +228,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+function observeSvgAnim() {
+  const elements = document.querySelectorAll('.svg-anim');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('anim-active');
+        observer.unobserve(entry.target); // animacija se pokreće samo jednom
+      }
+    });
+  }, { threshold: 0.3 });
+
+  elements.forEach(el => observer.observe(el));
+}
