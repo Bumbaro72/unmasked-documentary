@@ -459,3 +459,33 @@ section.special.open .curtain[data-side="right"] {
   }
 }
 
+/* Desktop i veći ekrani - sakrij */
+.mobile-landing {
+  display: none;
+}
+
+/* Mobilna verzija, portret orijentacija */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .mobile-landing {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999; /* Preko svega */
+  }
+}
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .mobile-landing {
+    display: flex;
+    flex-direction: row; /* Crno lijevo, bijelo desno */
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+}

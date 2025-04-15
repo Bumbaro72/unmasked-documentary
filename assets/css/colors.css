@@ -781,7 +781,7 @@
   flex-direction: column;
 }
 
-.pola {
+.lang-choice {
   flex: 1;
   display: flex;
   align-items: center;
@@ -792,13 +792,10 @@
   transition: background 0.3s ease;
 }
 
-.black { background: black; color: white; }
-.white { background: white; color: black; }
+.lang-choice.black { background: black; color: white; }
+.lang-choice.white { background: white; color: black; }
 
-.pola:hover {
+.lang-choice:hover {
   opacity: 0.85;
 }
 
-.hidden {
-  display: none;
-}
