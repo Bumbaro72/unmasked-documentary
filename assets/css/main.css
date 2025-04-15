@@ -116,7 +116,7 @@ em {
 nav {
   display: flex;
   height: 60px;
-  letter-spacing: 1.7px;
+  letter-spacing: 1.0px;
   z-index: 200;
 }
 
@@ -221,6 +221,10 @@ input, textarea, button {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.ispod {
+ position: relative;
+}
+
 /* GALLERY-SPECIFIC STYLES */
 .full-width {
   width: 100%;
@@ -262,7 +266,7 @@ input, textarea, button {
 }
 
 .chess-tile img:hover {
-  transform: scale(1.05);
+  transform: scale(0.95);
 }
 
 .underline-active::after {
@@ -300,7 +304,7 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, .top-nav a::af
   content: '';
   position: absolute;
   left: 0;
-  bottom: -3px; /* Podešavanje udaljenosti od teksta */
+  bottom: 5px; /* Podešavanje udaljenosti od teksta */
   width: 0;
   height: 2px; /* Debljina underlinea */
   background-color: currentColor; /* Boja underlinea = boja teksta */
@@ -416,3 +420,4 @@ section.special.open .curtain[data-side="right"] {
     font-size: 1rem;
   }
 }
+

@@ -1,6 +1,4 @@
 // Global animation trigger
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -20,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(section);
   });
 });
+
 
 
 // Production-specific JS can be added here

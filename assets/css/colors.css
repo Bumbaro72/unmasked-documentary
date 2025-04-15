@@ -753,3 +753,17 @@
   /*! padding: 20px; */
   text-align: center;
 }
+
+.svg-anim {
+  width: 100%;
+}
+
+.svg-anim svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 2s ease;
+}
+
+.svg-anim.animate-svg svg path {
+  stroke-dashoffset: 0;
+}
