@@ -781,7 +781,7 @@
   flex-direction: column;
 }
 
-.half {
+.pola {
   flex: 1;
   display: flex;
   align-items: center;
@@ -795,7 +795,7 @@
 .black { background: black; color: white; }
 .white { background: white; color: black; }
 
-.half:hover {
+.pola:hover {
   opacity: 0.85;
 }
 

@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
       mainContent.style.display = "none"; // Sakrij sve ispod mobilne početne
 
       // Klik na ENG ili FRA
-      document.querySelectorAll(".half").forEach((el) => {
+      document.querySelectorAll(".pola").forEach((el) => {
         el.addEventListener("click", () => {
           mobileEntry.style.display = "none";
           mainContent.style.display = "block";
