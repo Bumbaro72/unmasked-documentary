@@ -268,3 +268,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+document.querySelectorAll('.lang-choice').forEach(choice => {
+  choice.addEventListener('click', function () {
+    const lang = this.dataset.lang; // npr. "eng" ili "fra"
+    localStorage.setItem('preferredLang', lang); // spremimo jezik
+    document.body.classList.add(`lang-${lang}`); // dodajemo klasu tijelu
+
+    // Sakrijemo ulaznu stranicu
+    document.getElementById('mobile-entry').style.display = 'none';
+  });
+});

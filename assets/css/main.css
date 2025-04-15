@@ -421,6 +421,8 @@ section.special.open .curtain[data-side="right"] {
   overflow: hidden;
 }
 
+
+
 @media (max-width: 1024px) {
   nav,
   footer {
@@ -452,35 +454,18 @@ section.special.open .curtain[data-side="right"] {
   }
 }
 
-@media (max-width: 768px) {
-  nav,
-  footer {
-    display: none !important;
-  }
+
+
+/* Mobilna verzija - sakrij je u desktop verziji */
+#mobile-entry {
+  display: none; /* Sakrij u desktop verziji */
 }
 
-/* Desktop i veći ekrani - sakrij */
-.mobile-landing {
-  display: none;
-}
-
-/* Mobilna verzija, portret orijentacija */
-@media screen and (max-width: 768px) and (orientation: portrait) {
-  .mobile-landing {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999; /* Preko svega */
-  }
-}
-@media screen and (max-width: 768px) and (orientation: landscape) {
-  .mobile-landing {
-    display: flex;
-    flex-direction: row; /* Crno lijevo, bijelo desno */
+/* Mobilna verzija - portret i landscape orijentacija */
+@media screen and (max-width: 1024px) {
+  #mobile-entry {
+    display: flex; /* Prikazuj samo na mobilnoj */
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -488,4 +473,36 @@ section.special.open .curtain[data-side="right"] {
     left: 0;
     z-index: 9999;
   }
+
+  .lang-choice {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  /* Crna i bijela pozadina u oba slučaja */
+  .black {
+    background: black;
+    color: white;
+  }
+
+  .white {
+    background: white;
+    color: black;
+  }
+}
+
+/* Landscape orijentacija za mobilne uređaje */
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  #mobile-entry {
+    flex-direction: row; /* Umjesto column */
+  }
+}
+
+.lang-eng .half.fra,
+.lang-fra .half.eng {
+  display: none;
 }
