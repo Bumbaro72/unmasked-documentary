@@ -421,6 +421,13 @@ section.special.open .curtain[data-side="right"] {
   overflow: hidden;
 }
 
+@media (max-width: 1024px) {
+  nav,
+  footer {
+    display: none !important;
+  }
+}
+
 
 /* Adding animations and responsiveness */
 @media (max-width: 768px) {
@@ -442,6 +449,13 @@ section.special.open .curtain[data-side="right"] {
   
   .subtitle {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav,
+  footer {
+    display: none !important;
   }
 }
 

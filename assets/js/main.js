@@ -242,3 +242,29 @@ function observeSvgAnim() {
 
   elements.forEach(el => observer.observe(el));
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Provjera širine ekrana za mobitel
+  if (window.innerWidth <= 768) {
+    const mobileEntry = document.getElementById("mobile-entry");
+    const mainContent = document.querySelector("main"); // ili <body> ako koristiš drugačije
+
+    if (mobileEntry && mainContent) {
+      mobileEntry.classList.remove("hidden");
+      mainContent.style.display = "none"; // Sakrij sve ispod mobilne početne
+
+      // Klik na ENG ili FRA
+      document.querySelectorAll(".half").forEach((el) => {
+        el.addEventListener("click", () => {
+          mobileEntry.style.display = "none";
+          mainContent.style.display = "block";
+
+          // Ovdje možeš triggerati prebacivanje jezika ako želiš
+          const chosenLang = el.dataset.lang;
+          console.log("Odabrani jezik:", chosenLang);
+          // TODO: Aktivirati prikaz sadržaja na ENG ili FRA
+        });
+      });
+    }
+  }
+});
