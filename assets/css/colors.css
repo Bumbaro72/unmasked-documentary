@@ -31,6 +31,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 /* CURTAIN ANIMATION */
@@ -337,7 +339,7 @@
 
 .phase-title {
   opacity: 0.1;
-  font-size: 22px;
+  font-size: 18px;
   fill: #fff;
   transition: opacity 0.3s;
 }
@@ -352,7 +354,7 @@
 
 .phase-title-fr {
   opacity: 0.1;
-  font-size: 22px;
+  font-size: 18px;
   fill: #000;
   transition: opacity 0.3s;
 }
