@@ -45,7 +45,7 @@ console.log('Production page loaded');
   const allRightHalves = document.querySelectorAll('.right');
 
   const handleHover = (half, enter) => {
-    const texts = half.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
+    const texts = half.querySelectorAll('p, h1, h4, h5');
           texts.forEach(el => {
             if (enter) {
               el.style.opacity = '1';

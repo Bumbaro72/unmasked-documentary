@@ -462,7 +462,7 @@ section.special.open .curtain[data-side="right"] {
 }
 
 /* Mobilna verzija - portret i landscape orijentacija */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1080px) {
   #mobile-entry {
     display: flex; /* Prikazuj samo na mobilnoj */
     flex-direction: column;
@@ -496,7 +496,7 @@ section.special.open .curtain[data-side="right"] {
 }
 
 /* Landscape orijentacija za mobilne uređaje */
-@media screen and (max-width: 1024px) and (orientation: landscape) {
+@media screen and (max-width: 1080px) and (orientation: landscape) {
   #mobile-entry {
     flex-direction: row; /* Umjesto column */
   }
